@@ -17,11 +17,29 @@ class Category_model extends CI_Model
         $query = $this->db->get();
         return $query->result();
     }
+    public function get_category_berita()
+    {
+        $this->db->select('*');
+        $this->db->from('category');
+        $this->db->where('category_type', 'Berita');
+        $this->db->order_by('id', 'DESC');
+        $query = $this->db->get();
+        return $query->result();
+    }
+    public function get_category_product()
+    {
+        $this->db->select('*');
+        $this->db->from('category');
+        $this->db->where('category_type', 'Produk');
+        $this->db->order_by('id', 'DESC');
+        $query = $this->db->get();
+        return $query->result();
+    }
     public function get_category_donasi()
     {
         $this->db->select('*');
         $this->db->from('category');
-        $this->db->where('category_type', 'Donasi');
+        $this->db->where('category_type', 'Pemasukan');
         $this->db->order_by('id', 'DESC');
         $query = $this->db->get();
         return $query->result();

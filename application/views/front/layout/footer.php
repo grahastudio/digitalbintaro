@@ -46,12 +46,19 @@ $meta      = $this->meta_model->get_meta();
                 </ul>
             </div>
             <div class="col-6 col-md">
+                <h5>Alamat</h5>
+                <?php echo $meta->alamat ?>
 
             </div>
         </div>
     </div>
 </footer>
-<div class="credit text-center text-light py-md-3">Copyright &copy; <?php echo date('Y') ?> - <?php echo $meta->title ?> - <?php echo $meta->tagline ?></div>
+
+<div class="credit text-light pb-md-3">
+<div class="container py-md-3">
+    <span class="float-left">Copyright &copy; <?php echo date('Y') ?> - <?php echo $meta->title ?> - <?php echo $meta->tagline ?></span> <span class="float-right"> Developed by <a href="https://www.grahastudio.com/" target="blank"> Grahastudio</a></span>
+</div>
+</div>
 <!-- Load javascript Jquery -->
 <script src="<?php echo base_url() ?>assets/template/js/jquery.js" type="text/javascript"></script>
 <script src="<?php echo base_url() ?>assets/template/js/bootstrap.min.js" type="text/javascript"></script>

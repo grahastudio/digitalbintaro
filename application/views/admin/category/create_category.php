@@ -24,12 +24,13 @@
                 </div>
 
                 <div class="form-group">
-                    <label>Status Berita <span class="text-danger">*</span>
+                    <label>Tipe Kategori <span class="text-danger">*</span>
                     </label>
 
                     <select name="category_type" class="form-control form-control-chosen">
                         <option value="Berita">Berita</option>
-                        <option value="Donasi">Donasi</option>
+                        <option value="Produk">Produk</option>
+                        <option value="Pemasukan">Pemasukan</option>
                         <option value="Pengeluaran">Pengeluaran</option>
                     </select>
 

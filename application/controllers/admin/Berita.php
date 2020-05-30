@@ -76,7 +76,7 @@ class Berita extends CI_Controller
     {
 
 
-        $category = $this->category_model->get_category();
+        $category = $this->category_model->get_category_berita();
         $this->form_validation->set_rules(
             'berita_title',
             'Judul Berita',

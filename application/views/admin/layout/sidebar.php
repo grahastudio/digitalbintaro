@@ -24,13 +24,56 @@ $meta = $this->meta_model->get_meta();
         </li>
 
 
+        <div class="sidebar-heading">
+            MASTER
+        </div>
 
+        <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url('admin/product'); ?>">
+                <i class="fa-fw ti-bag text-primary"></i>
+                <span>Produk</span>
+            </a>
+        </li>
 
+        <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url('admin/order'); ?>">
+                <i class="fa-fw ti-shopping-cart text-primary"></i>
+                <span>Order</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url('admin/category'); ?>">
+                <i class="fa-fw ti-bookmark-alt text-primary"></i>
+                <span>kategori</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url('admin/asrama'); ?>">
+                <i class="fa-fw fas fa-store text-primary"></i>
+                <span>Cabang</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url('admin/cabang'); ?>">
+                <i class="fa-fw fas fa-users text-primary"></i>
+                <span>User</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="<?php echo base_url('admin/myaccount'); ?>">
+                <i class="fa-fw ti-user text-primary"></i>
+                <span>My Account</span>
+            </a>
+        </li>
 
 
 
         <div class="sidebar-heading">
-            MASTER DATA
+            FINANCE
         </div>
         <li class="nav-item">
             <a class="nav-link" href="<?php echo base_url('admin/pemasukan'); ?>">
@@ -53,33 +96,9 @@ $meta = $this->meta_model->get_meta();
             </a>
         </li>
 
-        <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('admin/category'); ?>">
-                <i class="fa-fw ti-bookmark-alt text-primary"></i>
-                <span>kategori</span>
-            </a>
-        </li>
+        
 
-        <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('admin/asrama'); ?>">
-                <i class="fa-fw fas fa-store text-primary"></i>
-                <span>Asrama</span>
-            </a>
-        </li>
-
-        <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('admin/cabang'); ?>">
-                <i class="fa-fw fas fa-users text-primary"></i>
-                <span>User</span>
-            </a>
-        </li>
-
-        <li class="nav-item">
-            <a class="nav-link" href="<?php echo base_url('admin/myaccount'); ?>">
-                <i class="fa-fw ti-user text-primary"></i>
-                <span>My Account</span>
-            </a>
-        </li>
+        
 
 
         <div class="sidebar-heading">

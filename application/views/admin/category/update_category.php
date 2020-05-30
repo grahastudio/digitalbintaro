@@ -31,9 +31,12 @@
                         <option value="Berita" <?php if ($category->category_type == "Berita") {
                                                     echo "selected";
                                                 } ?>>Berita</option>
-                        <option value="Donasi" <?php if ($category->category_type == "Donasi") {
+                        <option value="Produk" <?php if ($category->category_type == "Produk") {
                                                     echo "selected";
-                                                } ?>>Donasi</option>
+                                                } ?>>Produk</option>
+                        <option value="Pemasukan" <?php if ($category->category_type == "Pemasukan") {
+                                                    echo "selected";
+                                                } ?>>Pemasukan</option>
                         <option value="Pengeluaran">Pengeluaran</option>
                     </select>
                 </div>

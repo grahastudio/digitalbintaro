@@ -14,46 +14,32 @@
         <div class="col-lg-9">
 
             <div class="row">
-                <?php foreach ($products as $products) : ?>
+               
 
-                    <div class="col-md-4">
-                        <figure class="card card-product">
-                            <?php if ($products->product_img == NULL) : ?>
-                                <div class="img-wrap"><img class="img-fluid" src="<?php echo base_url('assets/img/product/empty_image.jpg'); ?>"></div>
+                <?php foreach ($product as $product) : ?>
+
+
+                <div class="col-md-4">
+                        <div class="card">
+                        <?php if ($product->product_img == NULL) : ?>
+                                <div class="img-wrap"><img class="img-fluid card-img-top" src="<?php echo base_url('assets/img/product/empty_image.jpg'); ?>"></div>
                             <?php else : ?>
-                                <div class="img-wrap"><img class="img-fluid" src="<?php echo base_url('assets/img/product/') . $products->product_img; ?>"></div>
+                                <div class="img-wrap"><img class="img-fluid card-img-top" src="<?php echo base_url('assets/img/product/') . $product->product_img; ?>"></div>
                             <?php endif; ?>
-
-                            <figcaption class="info-wrap">
-                                <h5 class="title"><?php echo substr($products->product_name, 0, 25); ?></h5>
-
-                                <div class="rating-wrap">
-                                    <div class="label-rating">
-                                        <?php if ($products->product_stock == 0) : ?>
-                                            Stok : <span class="badge badge-danger"> Habis</span>
-                                        <?php else : ?>
-                                            Stok : <span class="badge badge-success"><?php echo $products->product_stock; ?></span>
-                                        <?php endif; ?>
+                            <div class="card-body">
+                                <h5 class="card-title"><?php echo substr($product->product_name, 0, 25); ?></h5>
+                                Rp. <?php echo $product->product_price; ?>
+                                <a href="<?php echo base_url('product/detail/') . $product->product_slug; ?>" class="btn btn-sm btn-primary">Detail Produk</a>
+                            </div>
+                        </div>
+                    </div>
 
 
-                                    </div>
-                                    <div class="label-rating">
-                                        <?php if ($products->product_price == Null) { ?>
-                                        <?php } else {; ?>
-                                            Rp. <?php echo $products->product_price; ?>
-                                        <?php }; ?>
-
-                                    </div>
-                                </div> <!-- rating-wrap.// -->
-                            </figcaption>
-                            <div class="bottom-wrap text-center">
-                                <a href="<?php echo base_url('products/detail/') . $products->product_slug; ?>" class="btn btn-sm btn-primary">Detail Produk</a>
+                    <?php endforeach; ?>
 
 
-                            </div> <!-- bottom-wrap.// -->
-                        </figure>
-                    </div> <!-- col // -->
-                <?php endforeach; ?>
+
+                
 
             </div> <!-- row.// -->
 
@@ -63,9 +49,9 @@
             <div class="card">
                 <div class="card-header">Category Produk</div>
                 <div class="card-body">
-                    <?php foreach ($listcategory_products as $listcategory_products) : ?>
+                    <?php foreach ($listcategory_product as $listcategory_product) : ?>
                         <ul>
-                            <li><a href="<?php echo base_url('products/category_products/' . $listcategory_products->id); ?>"> <?php echo $listcategory_products->category_product_name; ?></a></li>
+                            <li><a href="<?php echo base_url('product/category_product/' . $listcategory_product->id); ?>"> <?php echo $listcategory_product->category_name; ?></a></li>
                         </ul>
 
                     <?php endforeach; ?>

@@ -1,14 +1,14 @@
-<section class="boot-elemant-bg py-md-5 py-4" style="background-color:darkblue;height: 500px; background-image: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url('assets/img/galery/bg.jpg');">
+<section class="boot-elemant-bg py-md-5 py-4" style="background-color:darkblue;height: 350px; background-image: linear-gradient(to right, rgba(0,0,0,.0), rgba(0,0,0,0)), url('assets/img/galery/bg.jpg');">
     <div class="container position-relative py-md-5 py-0">
         <div class="row">
             <div class="container" style="position: absolute;">
                 <div class="row">
                     <div class="col-md-6"></div>
                     <div class="col-md-6">
-                        <div class="text-right text-white">
+                        <div class="text-right text-dark">
                             <h1><b>Example headline.</b></h1>
                             <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                            <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+                            <!-- <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p> -->
                         </div>
                     </div>
                 </div>
@@ -23,50 +23,62 @@
     <div class="container">
 
         <div class="row">
-            <div class="card counter col-md-12">
-                <div class="card-body">
+            <div class="counter col-md-12">
+                
                     <div class="row">
                         <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
                             <div class="row">
                                 <div class="col-3">
-                                    <div style="font-size:50px;">
-                                        <i class="far fa-user"></i>
+                                    <div style="font-size:50px;color:#00a2e9;">
+                                        <i class="ti-thumb-up"></i>
                                     </div>
                                 </div>
                                 <div class="col-9">
-                                    <div style="font-size:50px;">9000</div>
-                                    Anak Yatim
+                                    <h4>Hasil Cetak Bagus</h4>
+                                    Kami memberikan hasil cetak maksimal
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="col-md-4">
+                        <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-3">
+                                    <div style="font-size:50px;color:#00a2e9;">
+                                        <i class="ti-wallet"></i>
+                                    </div>
+                                </div>
+                                <div class="col-9">
+                                    <h4>Harga Kompetitif</h4>
+                                    Harga murah dan sangat terjangkau
                                 </div>
                             </div>
                         </div>
+                        </div>
+                        </div>
                         <div class="col-md-4">
+                        <div class="card">
+                        <div class="card-body">
                             <div class="row">
                                 <div class="col-3">
-                                    <div style="font-size:50px;">
-                                        <i class="far fa-user"></i>
+                                    <div style="font-size:50px;color:#00a2e9;">
+                                        <i class="ti-headphone-alt"></i>
                                     </div>
                                 </div>
                                 <div class="col-9">
-                                    <div style="font-size:50px;font-weight:700;">40</div>
-                                    Cabang
+                                    <h4>Support 1x24 Jam</h4>
+                                    Kami siap melayani anda kapanpun
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="row">
-                                <div class="col-3">
-                                    <div style="font-size:50px;">
-                                        <i class="far fa-user"></i>
-                                    </div>
-                                </div>
-                                <div class="col-9">
-                                    <div style="font-size:50px;">1200</div>
-                                    Aktifitas
-                                </div>
-                            </div>
+                        </div>
                         </div>
                     </div>
-                </div>
+                
             </div>
         </div>
 
@@ -83,20 +95,71 @@
 
 
 
-            <div class="col-md-8 p-md-5">
-                <h1> Rasulullah shallallahu
-                    ‘alaihi wa sallam
-                    bersabda</h1>
-                Sedekah dapat menghapus dosa
-                sebagaimana air memadamkan api.”
-                (HR. Tirmidzi, di shahihkan Al Albani
-                dalam Shahih At Tirmidzi, 614)
+            <div class="col-md-8">
+                <h3 class="my-3">Produk & Layanan</h3>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img class="card-img-top" src="<?php echo base_url('assets/img/product/kartu-nama.jpg');?>" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Banner</h5>
+                                <a href="#" class="btn btn-primary btn-sm">Order Sekarang</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img class="card-img-top" src="<?php echo base_url('assets/img/product/kartu-nama.jpg');?>" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Roll Up</h5>
+                                <a href="#" class="btn btn-primary btn-sm">Order Sekarang</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img class="card-img-top" src="<?php echo base_url('assets/img/product/kartu-nama.jpg');?>" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Sticker</h5>
+                                <a href="#" class="btn btn-primary btn-sm">Order Sekarang</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img class="card-img-top" src="<?php echo base_url('assets/img/product/kartu-nama.jpg');?>" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Poster</h5>
+                                <a href="#" class="btn btn-primary btn-sm">Order Sekarang</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img class="card-img-top" src="<?php echo base_url('assets/img/product/kartu-nama.jpg');?>" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Brosur</h5>
+                                <a href="#" class="btn btn-primary btn-sm">Order Sekarang</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img class="card-img-top" src="<?php echo base_url('assets/img/product/kartu-nama.jpg');?>" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Kartu Nama</h5>
+                                <a href="#" class="btn btn-primary btn-sm">Order Sekarang</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-            <div class="col-md-4 form-signup">
+            <div class="col-md-4 form-signup my-3">
                 <div class="card">
 
                     <div class="card-body">
-                        <h5 class="card-title">Daftar jadi Donatur</h5>
+                        <h5 class="card-title">Daftar jadi Pelanggan</h5>
                         <hr>
 
                         <?php

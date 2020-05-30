@@ -97,12 +97,12 @@ $meta = $this->meta_model->get_meta();
             </div>
         </li> -->
 
-        <!-- <li class="nav-item dropdown no-arrow">
+        <li class="nav-item dropdown no-arrow">
             <a class="nav-link dropdown-toggle" href="<?php echo base_url(); ?>" target="blank" id="userDropdown" role="button" aria-haspopup="true" aria-expanded="false">
                 <i class="ti-link"></i>
                 <span class="ml-2 d-none d-lg-inline text-white small">Lihat Website</span>
             </a>
-        </li> -->
+        </li>
 
 
         <div class="topbar-divider d-none d-sm-block"></div>
