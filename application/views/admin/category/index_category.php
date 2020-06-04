@@ -16,7 +16,7 @@ echo validation_errors('<div class="alert alert-warning">', '</div>');
 <div class="mb-4">
     <div class="card">
         <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-            <h6 class="m-0 font-weight-bold text-primary">Pemasukan</h6>
+            <h6 class="m-0 font-weight-bold text-primary"><?php echo $title;?></h6>
             <?php include "create_category.php"; ?>
         </div>
         <div class="table-responsive">

@@ -206,11 +206,6 @@ $this->load->view('front/layout/wrapp', $data, FALSE);
 }
 
 
-
-
-
-
-
     //main page - detail Produk
     public function detail($product_slug = NULL)
     {
@@ -221,22 +216,16 @@ $this->load->view('front/layout/wrapp', $data, FALSE);
         }
 
         $meta           = $this->meta_model->get_meta();
-
         $product         = $this->product_model->read($product_slug);
-        $listcategory_product = $this->category_model->get_category_product();
-
-
-        $user_id    = $product->user_id;
-        $related_product = $this->product_model->related_product($user_id);
-
+        $new_product        = $this->product_model->new_product();
+    
 
         $data = array(
             'title'                     => 'Produk',
             'deskripsi'                 => 'Berita - ' . $meta->description,
             'keywords'                  => 'Berita - ' . $meta->keywords,
             'product'                  => $product,
-            'related_product'          => $related_product,
-            'listcategory_product'     => $listcategory_product,
+            'new_product'               => $new_product,
             'content'                   => 'front/product/detail_product'
         );
         $this->add_count($product_slug);
@@ -267,6 +256,75 @@ $this->load->view('front/layout/wrapp', $data, FALSE);
             $this->product_model->update_counter(urldecode($product_slug));
         }
     }
+
+
+// Fungsi Order Produk
+
+public function order($id)
+{
+    $product = $this->product_model->product_detail($id);
+
+    $this->form_validation->set_rules(
+        'nama',
+        'Nama',
+        'required',
+        [
+          'required' 		=> 'Nama harus di isi',
+        ]
+      );
+  
+      if ($this->form_validation->run() == false) {
+  
+        $data = array(
+            'user_id'               => $this->session->userdata('id'),
+          'title'         => 'mobil',
+          'deskripsi'     => 'mobil',
+          'keywords'      => 'mobil',
+          'product'       => $product,
+          'content'       => 'front/product/order_product'
+        );
+        $this->load->view('front/layout/wrapp', $data, FALSE);
+  
+      }else{
+  
+        $i     = $this->input;
+        $data  = array(
+          'kode_transaksi'    => $i->post('kode_transaksi'),
+          'id_mobil'          => $i->post('id_mobil'),
+          'nama_mobil'        => $i->post('nama_mobil'),
+          'harga'             => $i->post('harga'),
+          'nama_paket'        => $i->post('nama_paket'),
+          'nama'              => $i->post('nama'),
+          'email'             => $i->post('email'),
+          'telp'              => $i->post('telp'),
+          'jam_jemput'        => $i->post('jam_jemput'),
+          'lama_sewa'         => $i->post('lama_sewa'),
+          'tanggal_jemput'    => $i->post('tanggal_jemput'),
+          'alamat_jemput'     => $i->post('alamat_jemput'),
+          'permintaan_khusus' => $i->post('permintaan_khusus'),
+          'tipe_pembayaran'   => $i->post('tipe_pembayaran'),
+          'ketentuan'         => $i->post('ketentuan'),
+          'status_bayar'      => 'Belum',
+          'tanggal_transaksi' => date('Y-m-d H:i:s'),
+          'tanggal_post'      => date('Y-m-d H:i:s')
+          // 'tanggal_bayar'      => date('Y-m-d H:i:s')
+  
+      );
+      //Proses Masuk Header Transaksi
+      // $this->transaksi_model->tambah($data);
+      $insert_id = $this->transaksi_model->tambah($data);
+
+      //End Masuk tabel transaksi
+    $this->session->set_flashdata('sukses', 'Checkout Berhasil');
+    redirect(base_url('mobil/sukses/' .$insert_id), 'refresh');
+
+    //End Masuk Database
+    }
+
+}
+
+
+
 }
 
 /* End of file berita.php */

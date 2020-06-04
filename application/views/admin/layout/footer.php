@@ -35,12 +35,12 @@
 <script type="text/javascript">
     $(document).ready(function() {
 
-        $('#donatur_name').autocomplete({
+        $('#client_name').autocomplete({
             source: "<?php echo base_url('admin/home/get_autocomplete'); ?>",
 
             select: function(event, ui) {
-                $('[name="donatur_name"]').val(ui.item.label);
-                $('[name="donatur_phone"]').val(ui.item.donatur_phone);
+                $('[name="client_name"]').val(ui.item.label);
+                $('[name="client_phone"]').val(ui.item.client_phone);
             }
         });
 

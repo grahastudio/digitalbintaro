@@ -486,8 +486,8 @@ class Pemasukan extends CI_Controller
             if (count($result) > 0) {
                 foreach ($result as $row)
                     $arr_result[] = array(
-                        'label'            => $row->donatur_name,
-                        'donatur_phone'    => $row->donatur_phone,
+                        'label'            => $row->client_name,
+                        'client_phone'    => $row->client_phone,
                     );
                 echo json_encode($arr_result);
             }

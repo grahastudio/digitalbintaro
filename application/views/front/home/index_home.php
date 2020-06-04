@@ -3,7 +3,9 @@
         <div class="row">
             <div class="container" style="position: absolute;">
                 <div class="row">
-                    <div class="col-md-6"></div>
+                    <div class="col-md-6">
+                        <img class="img-fluid" src="<?php echo base_url('assets/img/galery/gambar.png');?>">
+                    </div>
                     <div class="col-md-6">
                         <div class="text-right text-dark">
                             <h1><b>Example headline.</b></h1>
@@ -98,60 +100,18 @@
             <div class="col-md-8">
                 <h3 class="my-3">Produk & Layanan</h3>
                 <div class="row">
+
+                <?php foreach ($product_home as $product_home) :?>
                     <div class="col-md-4">
                         <div class="card">
-                            <img class="card-img-top" src="<?php echo base_url('assets/img/product/kartu-nama.jpg');?>" alt="Card image cap">
+                            <img class="card-img-top" src="<?php echo base_url('assets/img/product/' .$product_home->product_img);?>" alt="Card image cap">
                             <div class="card-body">
                                 <h5 class="card-title">Banner</h5>
                                 <a href="#" class="btn btn-primary btn-sm">Order Sekarang</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img class="card-img-top" src="<?php echo base_url('assets/img/product/kartu-nama.jpg');?>" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Roll Up</h5>
-                                <a href="#" class="btn btn-primary btn-sm">Order Sekarang</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img class="card-img-top" src="<?php echo base_url('assets/img/product/kartu-nama.jpg');?>" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Sticker</h5>
-                                <a href="#" class="btn btn-primary btn-sm">Order Sekarang</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img class="card-img-top" src="<?php echo base_url('assets/img/product/kartu-nama.jpg');?>" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Poster</h5>
-                                <a href="#" class="btn btn-primary btn-sm">Order Sekarang</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img class="card-img-top" src="<?php echo base_url('assets/img/product/kartu-nama.jpg');?>" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Brosur</h5>
-                                <a href="#" class="btn btn-primary btn-sm">Order Sekarang</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img class="card-img-top" src="<?php echo base_url('assets/img/product/kartu-nama.jpg');?>" alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title">Kartu Nama</h5>
-                                <a href="#" class="btn btn-primary btn-sm">Order Sekarang</a>
-                            </div>
-                        </div>
-                    </div>
+                <?php endforeach;?>  
 
                 </div>
             </div>

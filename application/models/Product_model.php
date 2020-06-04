@@ -17,13 +17,23 @@ class Product_model extends CI_Model
         $query = $this->db->get();
         return $query->result();
     }
+    public function home_product()
+    {
+        $this->db->select('product.*, user.user_name');
+        $this->db->from('product');
+        $this->db->join('user', 'user.id = product.user_id', 'LEFT');
+        $this->db->order_by('rand()');
+        $this->db->limit(6);
+        $query = $this->db->get();
+        return $query->result();
+    }
     public function new_product()
     {
         $this->db->select('product.*, user.user_name');
         $this->db->from('product');
         $this->db->join('user', 'user.id = product.user_id', 'LEFT');
-        $this->db->order_by('id', 'DESC');
-        $this->db->limit(3);
+        $this->db->order_by('rand()');
+        $this->db->limit(4);
         $query = $this->db->get();
         return $query->result();
     }
@@ -68,7 +78,7 @@ class Product_model extends CI_Model
         $this->db->join('category', 'category.id = product.category_id', 'LEFT');
         $this->db->join('user', 'user.id = product.user_id', 'LEFT');
         //End Join
-        $this->db->where(['product_status'     =>  'Aktif']);
+        $this->db->where(['product_status'     =>  'Publish']);
         $this->db->order_by('id', 'DESC');
         $query = $this->db->get();
         return $query->result();
@@ -119,7 +129,7 @@ class Product_model extends CI_Model
         $this->db->join('category', 'category.id = product.category_id', 'LEFT');
         $this->db->join('user', 'user.id = product.user_id', 'LEFT');
         //End Join
-        $this->db->where(['product_status'     =>  'Aktif']);
+        $this->db->where(['product_status'     =>  'Publish']);
         $this->db->order_by('id', 'DESC');
         $this->db->limit($limit, $start);
         $query = $this->db->get();
@@ -134,7 +144,7 @@ class Product_model extends CI_Model
         $this->db->join('category', 'category.id = product.category_id', 'LEFT');
         $this->db->join('user', 'user.id = product.user_id', 'LEFT');
         //End Join
-        $this->db->where(['product_status'     =>  'Aktif']);
+        $this->db->where(['product_status'     =>  'Publish']);
         $this->db->order_by('id', 'DESC');
         $query = $this->db->get();
         return $query->result();
@@ -148,7 +158,7 @@ class Product_model extends CI_Model
         $this->db->join('category', 'category.id = product.category_id', 'LEFT');
         $this->db->join('user', 'user.id = product.user_id', 'LEFT');
         //End Join
-        $this->db->where(['product_status'     =>  'Aktif']);
+        $this->db->where(['product_status'     =>  'Publish']);
         $this->db->order_by('id', 'DESC');
         $query = $this->db->get();
         return $query->result();
@@ -163,7 +173,7 @@ class Product_model extends CI_Model
         $this->db->join('user', 'user.id = product.user_id', 'LEFT');
         //End Join
         $this->db->where(array(
-            'product_status'           =>  'Aktif',
+            'product_status'           =>  'Publish',
             'product.product_slug'      =>  $product_slug
         ));
         $this->db->order_by('id', 'DESC');
@@ -197,7 +207,7 @@ class Product_model extends CI_Model
         $this->db->join('user', 'user.id = product.user_id', 'LEFT');
         //End Join
         $this->db->where(array(
-            'product_status'           =>  'Aktif',
+            'product_status'           =>  'Publish',
             'product.user_id'      =>  $user_id
         ));
         $this->db->order_by('product.id', 'DESC');
@@ -216,7 +226,7 @@ class Product_model extends CI_Model
         $this->db->join('user', 'user.id = product.user_id', 'LEFT');
         //End Join
         $this->db->where(array(
-            'product_status'           =>  'Aktif',
+            'product_status'           =>  'Publish',
             'product.user_id'      =>  $user_id
         ));
         $this->db->order_by('user.id', 'DESC');
@@ -253,7 +263,7 @@ class Product_model extends CI_Model
         $this->db->join('category', 'category.id = product.category_id', 'LEFT');
         //End Join
         $this->db->where(array(
-            'product_status'                    =>  'Aktif',
+            'product_status'                    =>  'Publish',
             'product.category_id'               =>  $category_id
         ));
         $this->db->order_by('category.id', 'DESC');
@@ -271,7 +281,7 @@ class Product_model extends CI_Model
         $this->db->join('user', 'user.id = product.user_id', 'LEFT');
         //End Join
         $this->db->where(array(
-            'product_status'           =>  'Aktif',
+            'product_status'           =>  'Publish',
             'product.user_id'      =>  $user_id
         ));
         $this->db->order_by('rand()');

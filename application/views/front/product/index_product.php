@@ -51,7 +51,7 @@
                 <div class="card-body">
                     <?php foreach ($listcategory_product as $listcategory_product) : ?>
                         <ul>
-                            <li><a href="<?php echo base_url('product/category_product/' . $listcategory_product->id); ?>"> <?php echo $listcategory_product->category_name; ?></a></li>
+                            <li><a href="<?php echo base_url('product/category/' . $listcategory_product->category_slug); ?>"> <?php echo $listcategory_product->category_name; ?></a></li>
                         </ul>
 
                     <?php endforeach; ?>

@@ -342,7 +342,7 @@ class Kas_model extends CI_Model
     // GET DATA AUTOCOMPLETE
     function search_blog($title)
     {
-        $this->db->like('donatur_name', $title, 'both');
+        $this->db->like('client_name', $title, 'both');
         $this->db->order_by('id', 'ASC');
         $this->db->limit(10);
         return $this->db->get('kas')->result();

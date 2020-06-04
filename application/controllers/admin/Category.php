@@ -39,9 +39,10 @@ class Category extends CI_Controller
             $this->load->view('admin/layout/wrapp', $data, FALSE);
         } else {
 
+            $slugcode = random_string('numeric', 5);
             $category_slug  = url_title($this->input->post('category_name'), 'dash', TRUE);
             $data  = [
-                'category_slug'     => $category_slug,
+                'category_slug'     => $slugcode . '-' . $category_slug,
                 'category_name'     => $this->input->post('category_name'),
                 'category_type'     => $this->input->post('category_type'),
                 'date_created'      => time()

@@ -23,7 +23,7 @@
                 <div class="row">
                     <label class="col-md-4">Nama Donatur</label>
                     <div class="col-md-8">
-                        : <b><?php echo $pemasukan->donatur_title ?> <?php echo $pemasukan->donatur_name ?></b>
+                        : <b><?php echo $pemasukan->client_title ?> <?php echo $pemasukan->client_name ?></b>
                     </div>
                 </div>
                 <div class="row">
@@ -35,7 +35,7 @@
                 <div class="row">
                     <label class="col-md-4">Nomor HP</label>
                     <div class="col-md-8">
-                        : <b><?php echo $pemasukan->donatur_phone ?></b>
+                        : <b><?php echo $pemasukan->client_phone ?></b>
                     </div>
                 </div>
                 <div class="row">
@@ -58,7 +58,7 @@
                 <div class="row">
                     <label class="col-md-4">Foto</label>
                     <div class="col-md-8">
-                        : <img src="<?php echo base_url('assets/img/donatur/' . $pemasukan->foto); ?>" class="img-fluid" />
+                        : <img src="<?php echo base_url('assets/img/client/' . $pemasukan->foto); ?>" class="img-fluid" />
                     </div>
                 </div>
 
