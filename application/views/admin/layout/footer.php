@@ -41,6 +41,8 @@
             select: function(event, ui) {
                 $('[name="client_name"]').val(ui.item.label);
                 $('[name="client_phone"]').val(ui.item.client_phone);
+                $('[name="client_email"]').val(ui.item.client_email);
+                $('[name="client_address"]').val(ui.item.client_address);
             }
         });
 

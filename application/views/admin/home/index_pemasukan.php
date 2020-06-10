@@ -23,6 +23,7 @@ echo validation_errors('<div class="alert alert-warning">', '</div>');
                         <th width="5%">No</th>
                         <th>Tanggal</th>
                         <th>Client</th>
+                        <th>Status</th>
                         <th>kategori</th>
                         <th>Tipe</th>
                         <th>Nominal</th>
@@ -35,18 +36,26 @@ echo validation_errors('<div class="alert alert-warning">', '</div>');
                         <tr>
                             <td class="text-info"><?php echo $no; ?></td>
                             <td><?php echo date("d/m/Y", strtotime($pemasukan->tanggal)); ?></td>
-                            <td><?php echo $pemasukan->client_name; ?></td>
+                            <td><?php echo $pemasukan->client_title; ?> <?php echo $pemasukan->client_name; ?></td>
+                            <td>
+                              <?php if ($pemasukan->status_invoice == 'Lunas') :?>
+                                <div class="badge badge-success"><?php echo $pemasukan->status_invoice; ?></div>
+                              <?php else:?>
+                                <div class="badge badge-danger"><?php echo $pemasukan->status_invoice; ?></div>
+                              <?php endif;?>
+
+                            </td>
                             <td><?php echo $pemasukan->category_name; ?></td>
                             <td><span class="badge badge-success"><?php echo $pemasukan->type; ?></span></td>
                             <td>
                                 <?php if ($pemasukan->nominal == NULL) : ?>
                                     Rp. <?php echo '0'; ?>
                                 <?php else : ?>
-                                    Rp. <?php echo number_format($pemasukan->nominal, '0', ',', '.') ?>
+                                    Rp. <?php echo number_format($pemasukan->nominal, '0', ',', '.'); ?>
                                 <?php endif; ?>
                             </td>
                             <td>
-                                <?php include "view_pemasukan.php"; ?>
+                                <a class="btn btn-primary btn-sm" href="<?php echo base_url('admin/home/view_pemasukan/' .$pemasukan->id);?>">View</a>
                             </td>
                         </tr>
                     <?php $no++;
@@ -55,6 +64,7 @@ echo validation_errors('<div class="alert alert-warning">', '</div>');
                 <tfoot>
                     <tr>
                         <th width="5%"></th>
+                        <th></th>
                         <th></th>
                         <th></th>
                         <th></th>

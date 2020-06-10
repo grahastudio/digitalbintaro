@@ -1,72 +1,82 @@
-<button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#Edit<?php echo $pemasukan->id; ?>">
-    <i class="ti-eye"></i> Lihat
-</button>
-
-<div class="modal modal-default fade" id="Edit<?php echo $pemasukan->id ?>">
-    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title">Detail pemasukan</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span></button>
-
-            </div>
-            <div class="modal-body">
-
-
-                <div class="row">
-                    <label class="col-md-4">Tanggal</label>
-                    <div class="col-md-8">
-                        : <b><?php echo date("d/m/Y", strtotime($pemasukan->tanggal)); ?></b>
-                    </div>
-                </div>
-                <div class="row">
-                    <label class="col-md-4">Nama Donatur</label>
-                    <div class="col-md-8">
-                        : <b><?php echo $pemasukan->client_title ?> <?php echo $pemasukan->client_name ?></b>
-                    </div>
-                </div>
-                <div class="row">
-                    <label class="col-md-4">Kategory Donasi</label>
-                    <div class="col-md-8">
-                        : <b><?php echo $pemasukan->category_name ?></b>
-                    </div>
-                </div>
-                <div class="row">
-                    <label class="col-md-4">Nomor HP</label>
-                    <div class="col-md-8">
-                        : <b><?php echo $pemasukan->client_phone ?></b>
-                    </div>
-                </div>
-                <div class="row">
-                    <label class="col-md-4">Nominal</label>
-                    <div class="col-md-8">
-                        : <?php if ($pemasukan->nominal == NULL) : ?>
-                            Rp. <?php echo '0'; ?>
-                        <?php else : ?>
-                            Rp. <?php echo number_format($pemasukan->nominal, '0', ',', '.') ?>
-                        <?php endif; ?>
-
-                    </div>
-                </div>
-                <div class="row">
-                    <label class="col-md-4">Keterangan</label>
-                    <div class="col-md-8">
-                        : <b><?php echo $pemasukan->keterangan ?></b>
-                    </div>
-                </div>
-                <div class="row">
-                    <label class="col-md-4">Foto</label>
-                    <div class="col-md-8">
-                        : <img src="<?php echo base_url('assets/img/client/' . $pemasukan->foto); ?>" class="img-fluid" />
-                    </div>
-                </div>
-
-            </div>
-
+<?php $meta = $this->meta_model->get_meta();?>
+<?php
+//Notifikasi
+if ($this->session->flashdata('message')) {
+    echo '<div class="alert alert-success alert-dismissable fade show">';
+    echo '<button class="close" data-dismiss="alert" aria-label="Close">×</button>';
+    echo $this->session->flashdata('message');
+    echo '</div>';
+}
+?>
+<div class="card">
+  <div id="printableArea">
+    <div class="card-body row">
+        <div class="col-sm-6">
+            <h5>Telah terima Dari :</h5>
+            <address>
+                <strong><?php echo $view_pemasukan->client_title;?> <?php echo $view_pemasukan->client_name;?></strong><br>
+                <i class="fas fa-home"></i> <?php echo $view_pemasukan->client_address;?><br>
+                <i class="fas fa-phone"></i>  <?php echo $view_pemasukan->client_phone;?>
+            </address>
         </div>
-        <!-- /.modal-content -->
+        <div class="col-sm-6 text-right">
+            <h4>No. Invoice : <b><?php echo $view_pemasukan->no_invoice;?></b></h4>
+            <h4 class="text-navy"></h4>
+            <span>Status Pembayaran :</span><br>
+            <span class="badge badge-success py-2 pl-3 pr-3"><?php echo $view_pemasukan->status_invoice;?></span>
+
+            <p>
+                <span><strong>Invoice Date:</strong> <?php echo date('D, d F Y', $view_pemasukan->date_created); ?></span><br/>
+            </p>
+        </div>
+
+        <div class="table-responsive m-t">
+            <table class="table invoice-table">
+                <thead>
+                <tr>
+                    <th>Jenis Cetakan</th>
+                    <th>Banyaknya</th>
+                    <th>Total Harga</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><div><strong><?php echo $view_pemasukan->product_name;?></strong></div>
+                        <small><?php echo $view_pemasukan->product_desc;?></small></td>
+                    <td><?php echo $view_pemasukan->product_qty;?></td>
+                    <td>Rp. <?php echo number_format($view_pemasukan->nominal, '0', ',', '.');?></td>
+                </tr>
+
+                </tbody>
+                <tfoot>
+                  <tr>
+                      <th></th>
+                      <th></th>
+                      <th></th>
+                  </tr>
+                </tfood>
+
+            </table>
+        </div><!-- /table-responsive -->
     </div>
-    <!-- /.modal-dialog -->
+    <div class="card-body">Terima Kasih telah menggunakan jasa <?php echo $meta->title;?> - <?php echo $meta->tagline;?><br>
+    Phone : <?php echo $meta->telepon;?><br>
+    Email : <?php echo $meta->email;?><br>
+    Email : <?php echo $meta->alamat;?><br>
+    </div>
+
 </div>
-<!-- /.modal -->
+                            <div class="card-body">
+                            <div>
+                              <?php if ($view_pemasukan->status_invoice == 'Hutang') :?>
+                                <?php echo form_open('admin/home/update_lunas/' .$view_pemasukan->id);?>
+                                <button class="btn btn-danger bg-gradient-danger"><i class="fa fa-dollar"></i> Lunas</button>
+                                <?php echo form_close();?>
+                              <?php else:?>
+                              <?php endif;?>
+                                <button class="btn btn-primary bg-gradient-primary" type="button" onclick="printDiv('printableArea')"><i class="ti-printer"></i> Print</button>
+                            </div>
+                          </div>
+
+
+                        </div>

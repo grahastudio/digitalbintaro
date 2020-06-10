@@ -36,7 +36,7 @@ echo validation_errors('<div class="alert alert-warning">', '</div>');
                         <th width="5%">No</th>
                         <th>Tanggal</th>
                         <th>Cabang</th>
-                        <th>Nama Donatur</th>
+                        <th>Nama Client</th>
                         <th>Kategori</th>
                         <th>Nominal</th>
                         <th width="22%">Action</th>
@@ -52,7 +52,7 @@ echo validation_errors('<div class="alert alert-warning">', '</div>');
                                 <?php echo $pemasukan->asrama_name; ?><br>
                                 <i class="far fa-user"></i> <?php echo $pemasukan->user_name; ?>
                             </td>
-                            <td><?php echo $pemasukan->donatur_title; ?> <?php echo $pemasukan->donatur_name; ?></td>
+                            <td><?php echo $pemasukan->client_title; ?> <?php echo $pemasukan->client_name; ?></td>
                             <td><span class="badge badge-success"><?php echo $pemasukan->category_name; ?></span></td>
                             <td>
                                 <?php if ($pemasukan->nominal == NULL) : ?>

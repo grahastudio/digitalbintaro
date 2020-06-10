@@ -21,7 +21,7 @@ class Kas_model extends CI_Model
     {
         $this->db->select('*');
         $this->db->from('kas');
-        $this->db->where('user_id', $id) ;       
+        $this->db->where('user_id', $id) ;
         $this->db->order_by('id', 'DESC');
         $query = $this->db->get();
         return $query->result();
@@ -264,9 +264,12 @@ class Kas_model extends CI_Model
     }
     public function kas_detail_pemasukan($id)
     {
-        $this->db->select('*');
+        $this->db->select('kas.*, product.product_name, product.product_desc');
         $this->db->from('kas');
-        $this->db->where(array('id' => $id, 'type'     =>  'pemasukan'));
+        // JOIN
+        $this->db->join('product', 'product.id = kas.product_id', 'LEFT');
+        // END JOIN
+        $this->db->where(array('kas.id' => $id, 'type'     =>  'pemasukan'));
         $query = $this->db->get();
         return $query->row();
     }
@@ -532,7 +535,7 @@ class Kas_model extends CI_Model
         return $query->result();
 
 
-        
+
 
     }
 }
