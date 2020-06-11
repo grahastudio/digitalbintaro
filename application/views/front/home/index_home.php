@@ -8,8 +8,8 @@
                     </div>
                     <div class="col-md-6">
                         <div class="text-right text-dark">
-                            <h1><b>Example headline.</b></h1>
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                            <h1><b>Digital Bintaro.</b></h1>
+                            <p>Digital, offset & screen printing. Kami memberikan solusi printing</p>
                             <!-- <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p> -->
                         </div>
                     </div>
@@ -26,7 +26,7 @@
 
         <div class="row">
             <div class="counter col-md-12">
-                
+
                     <div class="row">
                         <div class="col-md-4">
                         <div class="card">
@@ -80,7 +80,7 @@
                         </div>
                         </div>
                     </div>
-                
+
             </div>
         </div>
 
@@ -111,7 +111,7 @@
                             </div>
                         </div>
                     </div>
-                <?php endforeach;?>  
+                <?php endforeach;?>
 
                 </div>
             </div>
