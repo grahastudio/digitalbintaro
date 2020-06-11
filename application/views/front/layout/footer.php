@@ -30,9 +30,9 @@ $meta      = $this->meta_model->get_meta();
                 <h5>Produk Utama</h5>
                 <ul class="list-unstyled text-small">
 
-                    <li><a class="text-muted" href="#sec1">Foshand</a></li>
-                    <li><a class="text-muted" href="#sec2">Alcohol 70%</a></li>
-                    <li><a class="text-muted" href="#sec3">fosdes 1420</a></li>
+                    <li><a class="text-muted" href="#sec1">Cetak Spanduk</a></li>
+                    <li><a class="text-muted" href="#sec2">Cetak Kartu nama</a></li>
+                    <li><a class="text-muted" href="#sec3">Cetak Brosur</a></li>
 
                 </ul>
             </div>
